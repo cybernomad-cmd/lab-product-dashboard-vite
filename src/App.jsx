@@ -3,11 +3,17 @@ import ProductList from "./components/ProductList";
 import productsData from "../db.json";
 
 function App() {
+  const [products, setProducts] = useState(productsData.products);
   const [showAvailable, setShowAvailable] = useState(false);
 
+  function handleRemove(id) {
+    const updatedProducts = products.filter((p) => p.id !== id);
+    setProducts(updatedProducts);
+  }
+
   const filteredProducts = showAvailable
-    ? productsData.products.filter((product) => product.available)
-    : productsData.products;
+    ? products.filter((product) => product.available)
+    : products;
 
   return (
     <div>
@@ -21,7 +27,10 @@ function App() {
         Show Available
       </button>
 
-      <ProductList products={filteredProducts} />
+      <ProductList
+        products={filteredProducts}
+        onRemove={handleRemove}
+      />
     </div>
   );
 }
