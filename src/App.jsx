@@ -1,23 +1,29 @@
-import React, { useState } from 'react';
-import ProductList from './components/ProductList';
+import { useState } from "react";
+import ProductList from "./components/ProductList";
+import productsData from "../db.json";
 
-const App = () => {
-  // TODO: Define initial product data
+function App() {
+  const [showAvailable, setShowAvailable] = useState(false);
 
-  // TODO: Implement state to manage filtering
-
-  // TODO: Implement logic to filter products based on availability
+  const filteredProducts = showAvailable
+    ? productsData.products.filter((product) => product.available)
+    : productsData.products;
 
   return (
     <div>
-      <h1>{/* TODO: Add 'Product Dashboard' title here */}</h1>
-      
-      {/* TODO: Add buttons to allow filtering by availability */}
+      <h1>Product Dashboard</h1>
 
-      {/* TODO: Render the ProductList component and pass filtered products */}
-      
+      <button onClick={() => setShowAvailable(false)}>
+        Show All
+      </button>
+
+      <button onClick={() => setShowAvailable(true)}>
+        Show Available
+      </button>
+
+      <ProductList products={filteredProducts} />
     </div>
   );
-};
+}
 
 export default App;
