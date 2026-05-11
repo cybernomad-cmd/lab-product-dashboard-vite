@@ -12,11 +12,11 @@ function App() {
   }
 
   const filteredProducts = showAvailable
-    ? products.filter((product) => product.available)
+    ? products.filter((product) => product.inStock)
     : products;
 
   return (
-    <div>
+    <>
       <h1>Product Dashboard</h1>
 
       <button onClick={() => setShowAvailable(false)}>
@@ -31,7 +31,7 @@ function App() {
         products={filteredProducts}
         onRemove={handleRemove}
       />
-    </div>
+    </>
   );
 }
 
