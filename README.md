@@ -118,3 +118,4 @@ And it's gone!
 - [append()](https://developer.mozilla.org/en-US/docs/Web/API/Element/append)
 - [removeChild()](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild)
 - [element.remove()](https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove)
+// refresh
