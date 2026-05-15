@@ -1,6 +1,6 @@
 /* eslint-env jest */
 import '@testing-library/jest-dom'
-import { test, expect } from '@jest/globals'
+import { test, expect } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/react'
 import App from '../App'
 
