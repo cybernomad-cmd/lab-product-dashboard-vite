@@ -12,7 +12,7 @@ function App() {
   }
 
   const filteredProducts = showAvailable
-    ? products.filter((product) => product.inStock)
+    ? products.filter((product) => product.available)
     : products;
 
   return (
